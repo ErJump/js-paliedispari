@@ -17,14 +17,20 @@ console.log(userWord.length)
     }
 } */
 
+
+
 function palindrome(word){
     const wordLength = word.length;
-    //ciclo for basato su metà della lunghezza della parola
-    for (let i = 0; i < wordLength / 2; i++){
-        //ottengo in console la singola lettera della mezza parola ogni ciclo
-        console.log(word[i]);
-    }
     
+    //ciclo for che si ripete per metà della lunghezza della parola
+    for (let i = 0; i < wordLength / 2; i++){
+        //ogni ciclo metto a confronto la prima e l'ultima lettera della parola spostandomi ogni volta verso il "centro" della parola  
+        if (word[i] !== word[wordLength - 1 - i]){
+            //se e solo se un confronto è diverso allora la funzione si interrompe e riporta che la parola non è palindroma
+            return `${word} NON è una parola palindroma`;
+        } 
+        return `${word} è una parola palindroma`;
+    }  
 }
 
-palindrome(userWord); 
+alert(palindrome(userWord)); 
