@@ -19,7 +19,7 @@ while (userNumberCheck === false){
 }
 
 function getRandom (min, max){
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * ((max + 1) - min) + min);
 }
 
 const sum = userNumber + getRandom(1,5);
