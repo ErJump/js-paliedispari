@@ -22,4 +22,20 @@ function getRandom (min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-console.log(getRandom(1,5));
+const sum = userNumber + getRandom(1,5);
+
+console.log(`La somma tra il tuo numero il numero randomico è ${sum}`);
+
+function sumOddOrEven (number){
+    if (number % 2 === 0){
+        return 'pari'
+    } else {
+        return 'dispari'
+    }
+}
+
+if (oddOrEvenChoice === sumOddOrEven(sum)){
+    alert('Winner winner chicken dinner!')
+} else {
+    alert('Defeat')
+}
