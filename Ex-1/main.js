@@ -1,6 +1,5 @@
 let userWord = prompt('Inserisci una parola');
 
-console.log(userWord.length)
 //Too easy
 /* function palindrome (word){
     //converto la stringa in un array attraverso split 
@@ -18,19 +17,25 @@ console.log(userWord.length)
 } */
 
 
-
-function palindrome(word){
+function palindrome(word , value){
+    value = true;
     const wordLength = word.length;
-    
     //ciclo for che si ripete per metà della lunghezza della parola
     for (let i = 0; i < wordLength / 2; i++){
         //ogni ciclo metto a confronto la prima e l'ultima lettera della parola spostandomi ogni volta verso il "centro" della parola  
         if (word[i] !== word[wordLength - 1 - i]){
-            //se e solo se un confronto è diverso allora la funzione si interrompe e riporta che la parola non è palindroma
-            return `${word} NON è una parola palindroma`;
+            value = false;
         } 
-        return `${word} è una parola palindroma`;
-    }  
+    }
+    return value;  
 }
 
-alert(palindrome(userWord)); 
+let check; 
+
+check = palindrome(userWord, check);
+
+if (check === true){
+    alert(`${userWord} è una parola palindroma`);
+} else {
+    alert(`${userWord} NON è una parola palindroma`);
+}
