@@ -19,6 +19,7 @@ let userWord = prompt('Inserisci una parola');
 
 function palindrome(word , value){
     value = true;
+    word = word.toLowerCase();
     const wordLength = word.length;
     //ciclo for che si ripete per metà della lunghezza della parola
     for (let i = 0; i < wordLength / 2; i++){
